@@ -166,12 +166,11 @@
 
     <script>
         // =========================================================
-        // GITHUB CONFIGURATION
-        // Make sure to put your exact working GitHub username and repo name here!
+        // GITHUB CONFIGURATION (Configured with your repository details)
         // =========================================================
-        const GITHUB_USER = "YOUR_GITHUB_USERNAME";
-        const GITHUB_REPO = "YOUR_REPOSITORY_NAME";
-        const GITHUB_BRANCH = "main";
+        const GITHUB_USER = "tutormszeeqah"; //
+        const GITHUB_REPO = "cs9618_Nov24_P42"; //[cite: 20]
+        const GITHUB_BRANCH = "main"; //[cite: 20]
         
         const RAW_GITHUB_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/`;
 
@@ -287,7 +286,7 @@
 
             // Update DOM Elements
             document.getElementById('question-title').innerHTML = `<i class="fa-regular fa-file-lines text-slate-900"></i> <span>${data.title}</span>`;
-            document.getElementById('page-badge').innerText = `Page ${pageNum}`;
+            document.getElementById('page-badge`').innerText = `Page ${pageNum}`;
             document.getElementById('code-block').innerText = data.code;
             document.getElementById('guidelines-content').innerHTML = data.guideline;
 
