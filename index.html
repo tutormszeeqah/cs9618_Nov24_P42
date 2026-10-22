@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9618 November 2024 Paper 42 Portal</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <!-- Tailwind CSS for Responsive Layouts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #FA8FDF;
+            background-color: #F527C2; /* User specified background color */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .code-container {
@@ -23,7 +23,16 @@
             border-radius: 12px;
             background-color: #ffffff;
         }
-        /* Custom scrollbar for preview windows */
+        /* Custom color theme classes */
+        .theme-dropdown-box {
+            background-color: #A6F527 !important;
+        }
+        .theme-left-header {
+            background-color: #A6F527;
+        }
+        .theme-right-header {
+            background-color: #27C2F5;
+        }
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -36,33 +45,30 @@
             background: #94a3b8;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
-        }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
     <div class="max-w-7xl mx-auto space-y-6">
 
-        <!-- ================= HEADER SECTION ================= -->
-        <header class="text-center space-y-2">
+        <!-- Header Section -->
+        <header class="text-center space-y-2 bg-white/90 p-6 rounded-2xl shadow-md backdrop-blur-sm">
             <h1 class="text-3xl md:text-4xl font-bold text-slate-800">
                 9618 November 2024 Paper 42 Portal
             </h1>
-            <p class="text-slate-600 font-medium text-lg">
+            <p class="text-slate-700 font-semibold text-lg">
                 A Level Computer Science (Complete Paper 4 Suite) Python Language
             </p>
         </header>
 
-        <!-- ================= DROPDOWN NAVIGATION ================= -->
-        <nav class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+        <!-- Navigation Bar (Dropdown Selection) -->
+        <nav class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white p-5 rounded-xl shadow-md border border-slate-200">
             <!-- Question 1 Dropdown -->
             <div>
-                <label for="q1-select" class="block text-sm font-semibold text-slate-700 mb-1">
+                <label for="q1-select" class="block text-sm font-bold text-slate-800 mb-1">
                     📌 Question 1 (Object-Oriented Programming)
                 </label>
-                <select id="q1-select" onchange="loadPage('q1', this.value)" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-800 text-sm font-medium">
+                <select id="q1-select" onchange="loadPage('q1', this.value)" class="w-full p-2.5 theme-dropdown-box border border-slate-400 rounded-lg focus:ring-2 focus:ring-slate-800 focus:outline-none text-slate-900 text-sm font-bold shadow-sm">
                     <option value="" disabled selected>-- Select Question 1 Page --</option>
                     <option value="1">Page 1: EventItem Class & Constructor</option>
                     <option value="2">Page 2: Get Methods & Group Array</option>
@@ -75,270 +81,198 @@
 
             <!-- Question 2 Dropdown -->
             <div>
-                <label for="q2-select" class="block text-sm font-semibold text-slate-700 mb-1">
-                    📌 Question 2 (Recursion & Binary Trees)
+                <label for="q2-select" class="block text-sm font-bold text-slate-800 mb-1">
+                    📌 Question 2 (Linear Queue Structure)
                 </label>
-                <select id="q2-select" onchange="loadPage('q2', this.value)" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-800 text-sm font-medium">
+                <select id="q2-select" onchange="loadPage('q2', this.value)" class="w-full p-2.5 theme-dropdown-box border border-slate-400 rounded-lg focus:ring-2 focus:ring-slate-800 focus:outline-none text-slate-900 text-sm font-bold shadow-sm">
                     <option value="" disabled selected>-- Select Question 2 Page --</option>
-                    <option value="1">Page 1: Binary Tree Structure</option>
-                    <option value="2">Page 2: Recursive Search Algorithm</option>
+                    <option value="1">Page 1: Queue Record & Setup</option>
+                    <option value="2">Page 2: Enqueue & ReturnAllData</option>
+                    <option value="3">Page 3: Validation Loop & Dequeue</option>
+                    <option value="4">Page 4: Main Program Testing</option>
                 </select>
             </div>
 
             <!-- Question 3 Dropdown -->
             <div>
-                <label for="q3-select" class="block text-sm font-semibold text-slate-700 mb-1">
-                    📌 Question 3 (Abstract Data Types & Files)
+                <label for="q3-select" class="block text-sm font-bold text-slate-800 mb-1">
+                    📌 Question 3 (2D Array & File Handling)
                 </label>
-                <select id="q3-select" onchange="loadPage('q3', this.value)" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-800 text-sm font-medium">
+                <select id="q3-select" onchange="loadPage('q3', this.value)" class="w-full p-2.5 theme-dropdown-box border border-slate-400 rounded-lg focus:ring-2 focus:ring-slate-800 focus:outline-none text-slate-900 text-sm font-bold shadow-sm">
                     <option value="" disabled selected>-- Select Question 3 Page --</option>
-                    <option value="1">Page 1: Queue Implementation</option>
-                    <option value="2">Page 2: File Handling Operations</option>
+                    <option value="1">Page 1: 2D Array & File Reading</option>
+                    <option value="2">Page 2: Output & Bubble Sort</option>
+                    <option value="3">Page 3: Main Execution Flow</option>
                 </select>
             </div>
         </nav>
 
-        <!-- ================= MAIN PREVIEW GRID ================= -->
+        <!-- Main Workspace (Dual Window Preview) -->
         <main class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-            <!-- Left Panel: Question Image Preview -->
-            <section class="card-container p-4 flex flex-col h-[650px] shadow-sm">
-                <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
-                    <h2 id="question-title" class="text-xl font-bold text-slate-800 flex items-center gap-2">
-                        <i class="fa-regular fa-file-lines text-blue-600"></i>
+            <!-- Left Box: Question Image Viewer (Themed #A6F527 Header) -->
+            <section class="card-container p-4 flex flex-col h-[650px] shadow-md">
+                <div class="flex items-center justify-between pb-3 px-3 pt-2 rounded-lg theme-left-header border border-lime-300 mb-3 shadow-sm">
+                    <h2 id="question-title" class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-regular fa-file-lines text-slate-900"></i>
                         <span>Question Preview</span>
                     </h2>
-                    <span id="page-badge" class="px-2.5 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full">
+                    <span id="page-badge" class="px-3 py-1 text-xs font-bold bg-white text-slate-900 rounded-full shadow-sm">
                         Page 1
                     </span>
                 </div>
                 <div class="flex-1 overflow-auto bg-slate-100 rounded-lg p-2 border border-slate-200 flex items-center justify-center">
-                    <img id="question-img" src="N24_q1_pg1.PNG" alt="Question Image" class="max-w-full h-auto rounded shadow-sm object-contain" onError="this.onerror=null; this.src='https://via.placeholder.com/600x800?text=Image+N24_q1_pg1.PNG+Not+Found';">
+                    <img id="question-img" src="" alt="Question Page Image" class="max-w-full h-auto rounded shadow-sm object-contain" onError="handleImageError(this)">
                 </div>
             </section>
 
-            <!-- Right Panel: Python Model Solution -->
-            <section class="card-container p-4 flex flex-col h-[650px] shadow-sm">
-                <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
-                    <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
-                        <i class="fa-solid fa-laptop-code text-emerald-600"></i>
+            <!-- Right Box: Python Model Code (Themed #27C2F5 Header) -->
+            <section class="card-container p-4 flex flex-col h-[650px] shadow-md">
+                <div class="flex items-center justify-between pb-3 px-3 pt-2 rounded-lg theme-right-header border border-sky-300 mb-3 shadow-sm">
+                    <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-laptop-code text-slate-900"></i>
                         <span>Python Model Solution</span>
                     </h2>
-                    <button onclick="copyCode()" class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-200 hover:bg-slate-700 rounded transition-colors flex items-center gap-1">
+                    <button onclick="copyCode()" class="px-3 py-1 text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 rounded-md transition-colors flex items-center gap-1 shadow-sm">
                         <i class="fa-regular fa-copy"></i> Copy Code
                     </button>
                 </div>
                 <div class="flex-1 overflow-auto code-container rounded-lg p-4 border border-slate-700">
-                    <pre><code id="code-block" class="text-sm leading-relaxed whitespace-pre font-mono text-emerald-400"># Select a question page from the top navigation to view the Python code model.</code></pre>
+                    <pre><code id="code-block" class="text-sm leading-relaxed whitespace-pre font-mono text-emerald-400"># Select a page to view the Python code model.</code></pre>
                 </div>
             </section>
 
         </main>
 
-        <!-- ================= BOTTOM EXAMINATION GUIDELINES ================= -->
-        <footer class="card-container p-6 shadow-sm">
+        <!-- Bottom Guidance Section -->
+        <footer class="card-container p-6 shadow-md bg-white">
             <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <i class="fa-solid fa-lightbulb text-amber-500"></i>
-                <span>Examination Focus & Syllabus Guidelines</span>
+                <span>Examination Focus & Guidelines</span>
             </h3>
-            <div id="guidelines-content" class="text-slate-600 text-sm leading-relaxed space-y-2">
-                <p>Select a question page to display dedicated guidance notes and examination techniques tailored for Cambridge 9618 Paper 4.</p>
+            <div id="guidelines-content" class="text-slate-700 text-sm leading-relaxed space-y-2 font-medium">
+                <p>Select a question page from the dropdown menu above to display tailored examination guidance notes.</p>
             </div>
         </footer>
 
+        <!-- Portal Footer Prayer Section -->
+        <div class="bg-slate-900 text-white text-center p-6 rounded-xl shadow-lg border border-slate-800">
+            <p class="text-xs md:text-sm font-bold tracking-wide uppercase text-lime-400 leading-relaxed">
+                SEMOGA ALLAH TA'ALA MEMUDAHKAN URUSAN DAN MENGUATKAN SEGALA HAFALAN DAN MENJAWAP SOALAN DENGAN BETUL DAN LENGKAP, DIDALAM MASA YANG DITENTUKAN UNTUK MENDAPAT KEPUTUSAN YANG CEMERLANG
+            </p>
+        </div>
+
     </div>
 
-    <!-- ================= JAVASCRIPT LOGIC ================= -->
     <script>
-        // Data Store for Portal Content
+        // =========================================================
+        // GITHUB CONFIGURATION
+        // =========================================================
+        const GITHUB_USER = "YOUR_GITHUB_USERNAME";
+        const GITHUB_REPO = "YOUR_REPOSITORY_NAME";
+        const GITHUB_BRANCH = "main";
+        
+        const RAW_GITHUB_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/`;
+
+        // Comprehensive Data Store for Nov 2024 Paper 42 (Q1, Q2, Q3)
         const portalData = {
             q1: {
-                titlePrefix: "Question 1",
                 pages: {
                     "1": {
-                        image: "N24_q1_pg1.PNG",
+                        imageFile: "N24_q1_pg1.PNG",
                         title: "Question 1 - Page 1: EventItem Class & Constructor",
-                        code: `# =========================================================
-# 9618 November 2024 Paper 42 - Question 1 (Page 1)
-# =========================================================
-
-class EventItem:
-    # Private Attribute Declarations (Python Comments)
-    # __EventName   : str
-    # __Type        : str
-    # __Difficulty  : int
-
-    def __init__(self, p_name: str, p_type: str, p_difficulty: int):
-        self.__EventName = p_name
-        self.__Type = p_type
-        self.__Difficulty = p_difficulty`,
-                        guideline: "• Use double leading underscores (__attribute) for private attributes.<br>• Python requires attribute declarations as comments as per syllabus rules."
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 1 (Page 1)\n# =========================================================\n\nclass EventItem:\n    # Private Attribute Declarations (Python Comments)\n    # __EventName   : str\n    # __Type        : str\n    # __Difficulty  : int\n\n    def __init__(self, p_name: str, p_type: str, p_difficulty: int):\n        self.__EventName = p_name\n        self.__Type = p_type\n        self.__Difficulty = p_difficulty`,
+                        guideline: "• Declare private attributes using double underscores (`__attribute`).<br>• Include data type declarations in comments as required for Python in 9618."
                     },
                     "2": {
-                        image: "N24_q1_pg2.PNG",
+                        imageFile: "N24_q1_pg2.PNG",
                         title: "Question 1 - Page 2: Get Methods & Group Array",
-                        code: `# =========================================================
-# 9618 November 2024 Paper 42 - Question 1 (Page 2)
-# =========================================================
-
-    def GetName(self) -> str:
-        return self.__EventName
-
-    def GetDifficulty(self) -> int:
-        return self.__Difficulty
-
-    def GetEventType(self) -> str:
-        return self.__Type
-
-# Main Program Scope
-Group = []  # Declared local to main program
-
-Group.append(EventItem("Bridge", "jump", 3))
-Group.append(EventItem("Water wade", "swim", 4))
-Group.append(EventItem("100 mile run", "run", 5))
-Group.append(EventItem("Gridlock", "drive", 2))
-Group.append(EventItem("Wall on wall", "jump", 4))`,
-                        guideline: "• Maintain exact method identifiers matching the question table (`GetName`, `GetDifficulty`, `GetEventType`).<br>• Instantiate 5 objects into the `Group` array."
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 1 (Page 2)\n# =========================================================\n\n    def GetName(self) -> str:\n        return self.__EventName\n\n    def GetDifficulty(self) -> int:\n        return self.__Difficulty\n\n    def GetEventType(self) -> str:\n        return self.__Type\n\n# Main Program Scope\nGroup = []  # Declare local array\n\nGroup.append(EventItem("Bridge", "jump", 3))\nGroup.append(EventItem("Water wade", "swim", 4))\nGroup.append(EventItem("100 mile run", "run", 5))\nGroup.append(EventItem("Gridlock", "drive", 2))\nGroup.append(EventItem("Wall on wall", "jump", 4))`,
+                        guideline: "• Match exact getter names given in the table (`GetName`, `GetDifficulty`, `GetEventType`).<br>• Instantiate 5 objects into the `Group` list."
                     },
                     "3": {
-                        image: "N24_q1_pg3.PNG",
+                        imageFile: "N24_q1_pg3.PNG",
                         title: "Question 1 - Page 3: Character Class & Constructor",
-                        code: `# =========================================================
-# 9618 November 2024 Paper 42 - Question 1 (Page 3)
-# =========================================================
-
-class Character:
-    # Private Attribute Declarations
-    # __CharacterName : str
-    # __Jump          : int
-    # __Swim          : int
-    # __Run           : int
-    # __Drive         : int
-
-    def __init__(self, p_name: str, p_jump: int, p_swim: int, p_run: int, p_drive: int):
-        self.__CharacterName = p_name
-        self.__Jump = p_jump
-        self.__Swim = p_swim
-        self.__Run = p_run
-        self.__Drive = p_drive
-
-    def GetName(self) -> str:
-        return self.__CharacterName`,
-                        guideline: "• Private attributes ensure encapsulation.<br>• Specify parameter data types correctly according to the syllabus."
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 1 (Page 3)\n# =========================================================\n\nclass Character:\n    # Private Attribute Declarations\n    # __CharacterName : str\n    # __Jump          : int\n    # __Swim          : int\n    # __Run           : int\n    # __Drive         : int\n\n    def __init__(self, p_name: str, p_jump: int, p_swim: int, p_run: int, p_drive: int):\n        self.__CharacterName = p_name\n        self.__Jump = p_jump\n        self.__Swim = p_swim\n        self.__Run = p_run\n        self.__Drive = p_drive\n\n    def GetName(self) -> str:\n        return self.__CharacterName`,
+                        guideline: "• Ensure constructor parameters match the order in the class diagram.<br>• Private attributes guarantee proper encapsulation."
                     },
                     "4": {
-                        image: "N24_q1_pg4.PNG",
+                        imageFile: "N24_q1_pg4.PNG",
                         title: "Question 1 - Page 4: CalculateScore Method",
-                        code: `# =========================================================
-# 9618 November 2024 Paper 42 - Question 1 (Page 4)
-# =========================================================
-
-    def CalculateScore(self, p_type: str, p_difficulty: int) -> int:
-        skill = 0
-        p_type = p_type.lower()
-        
-        if p_type == "jump":
-            skill = self.__Jump
-        elif p_type == "swim":
-            skill = self.__Swim
-        elif p_type == "run":
-            skill = self.__Run
-        elif p_type == "drive":
-            skill = self.__Drive
-
-        if skill >= p_difficulty:
-            return 100
-        else:
-            diff = p_difficulty - skill
-            lookup = {1: 80, 2: 60, 3: 40, 4: 20}
-            return lookup.get(diff, 0)`,
-                        guideline: "• Check parameter comparison logic (`skill >= p_difficulty`).<br>• Return integer value representing percentage chance of completion."
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 1 (Page 4)\n# =========================================================\n\n    def CalculateScore(self, p_type: str, p_difficulty: int) -> int:\n        skill = 0\n        p_type = p_type.lower()\n        \n        if p_type == "jump":\n            skill = self.__Jump\n        elif p_type == "swim":\n            skill = self.__Swim\n        elif p_type == "run":\n            skill = self.__Run\n        elif p_type == "drive":\n            skill = self.__Drive\n\n        if skill >= p_difficulty:\n            return 100\n        else:\n            diff = p_difficulty - skill\n            lookup = {1: 80, 2: 60, 3: 40, 4: 20}\n            return lookup.get(diff, 0)`,
+                        guideline: "• Check skill vs difficulty logic and return integer percentage values (100, 80, 60, 40, 20)."
                     },
                     "5": {
-                        image: "N24_q1_pg5.PNG",
+                        imageFile: "N24_q1_pg5.PNG",
                         title: "Question 1 - Page 5: Instantiating Character Objects",
-                        code: `# =========================================================
-# 9618 November 2024 Paper 42 - Question 1 (Page 5)
-# =========================================================
-
-# Main Program - Character Instantiation
-Tarz = Character("Tarz", 5, 3, 5, 1)
-Geni = Character("Geni", 2, 2, 3, 4)`,
-                        guideline: "• Pass parameters in the exact position order defined in the constructor."
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 1 (Page 5)\n# =========================================================\n\n# Main Program - Character Objects\nTarz = Character("Tarz", 5, 3, 5, 1)\nGeni = Character("Geni", 2, 2, 3, 4)`,
+                        guideline: "• Instantiate `Tarz` and `Geni` with exact skill attributes in the correct parameter order."
                     },
                     "6": {
-                        image: "N24_q1_pg6.PNG",
+                        imageFile: "N24_q1_pg6.PNG",
                         title: "Question 1 - Page 6: Event Loop & Winner Determination",
-                        code: `# =========================================================
-# 9618 November 2024 Paper 42 - Question 1 (Page 6)
-# =========================================================
-
-tarz_points = 0
-geni_points = 0
-
-for item in Group:
-    tarz_chance = Tarz.CalculateScore(item.GetEventType(), item.GetDifficulty())
-    geni_chance = Geni.CalculateScore(item.GetEventType(), item.GetDifficulty())
-    
-    if tarz_chance > geni_chance:
-        tarz_points += 1
-        print(f"Tarz won event {item.GetName()}")
-    elif geni_chance > tarz_chance:
-        geni_points += 1
-        print(f"Geni won event {item.GetName()}")
-    else:
-        print(f"Event {item.GetName()} was a draw")
-
-print("\\n--- Final Outcome ---")
-if tarz_points > geni_points:
-    print(f"Tarz is overall winner with {tarz_points} points")
-elif geni_points > tarz_points:
-    print(f"Geni is overall winner with {geni_points} points")
-else:
-    print("The overall competition ended in a draw")`,
-                        guideline: "• Loop through each event object in `Group`.<br>• Correctly compare scores, track overall wins, and output formatted messages."
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 1 (Page 6)\n# =========================================================\n\ntarz_points = 0\ngeni_points = 0\n\nfor item in Group:\n    tarz_chance = Tarz.CalculateScore(item.GetEventType(), item.GetDifficulty())\n    geni_chance = Geni.CalculateScore(item.GetEventType(), item.GetDifficulty())\n    \n    if tarz_chance > geni_chance:\n        tarz_points += 1\n        print(f"Tarz won event {item.GetName()}")\n    elif geni_chance > tarz_chance:\n        geni_points += 1\n        print(f"Geni won event {item.GetName()}")\n    else:\n        print(f"Event {item.GetName()} was a draw")\n\nprint("\\n--- Final Outcome ---")\nif tarz_points > geni_points:\n    print(f"Tarz is overall winner with {tarz_points} points")\nelif geni_points > tarz_points:\n    print(f"Geni is overall winner with {geni_points} points")\nelse:\n    print("The overall competition ended in a draw")`,
+                        guideline: "• Loop through `Group`, compare chances, update scores, and output final match results."
                     }
                 }
             },
             q2: {
-                titlePrefix: "Question 2",
                 pages: {
                     "1": {
-                        image: "N24_q2_pg1.PNG",
-                        title: "Question 2 - Page 1: Binary Tree Structure",
-                        code: `# Placeholder Python code for Question 2 - Page 1`,
-                        guideline: "Guideline notes for Question 2 Page 1."
+                        imageFile: "N24_q2_pg1.PNG",
+                        title: "Question 2 - Page 1: Queue Record Declaration & Main Setup",
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 2 (Page 1)\n# =========================================================\n\n# 2(a) Queue Class (Used as Record Structure in Python)\nclass Queue:\n    # QueueArray : Array[0..99] of INTEGER\n    # Headpointer : INTEGER\n    # Tailpointer : INTEGER\n    def __init__(self):\n        self.QueueArray = [-1 for _ in range(100)]\n        self.Headpointer = -1\n        self.Tailpointer = 0\n\n# 2(b) Main Program Initialization\nTheQueue = Queue()\nTheQueue.Headpointer = -1\nTheQueue.Tailpointer = 0\nTheQueue.QueueArray = [-1 for _ in range(100)]`,
+                        guideline: "• In Python, use a class to represent record structures.<br>• Initialize `QueueArray` with 100 elements set to `-1`."
                     },
                     "2": {
-                        image: "N24_q2_pg2.PNG",
-                        title: "Question 2 - Page 2: Recursive Search Algorithm",
-                        code: `# Placeholder Python code for Question 2 - Page 2`,
-                        guideline: "Guideline notes for Question 2 Page 2."
+                        imageFile: "N24_q2_pg2.PNG",
+                        title: "Question 2 - Page 2: Enqueue() and ReturnAllData()",
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 2 (Page 2)\n# =========================================================\n\n# 2(c) Enqueue Function\ndef Enqueue(AQueue: Queue, TheData: int) -> int:\n    if AQueue.Headpointer == -1:\n        AQueue.QueueArray[AQueue.Tailpointer] = TheData\n        AQueue.Headpointer = 0\n        AQueue.Tailpointer = AQueue.Tailpointer + 1\n        return 1\n    else:\n        if AQueue.Tailpointer > 99:\n            return -1\n        else:\n            AQueue.QueueArray[AQueue.Tailpointer] = TheData\n            AQueue.Tailpointer = AQueue.Tailpointer + 1\n            return 1\n\n# 2(d) ReturnAllData Function\ndef ReturnAllData(AQueue: Queue) -> str:\n    if AQueue.Headpointer == -1:\n        return ""\n    output_str = ""\n    for i in range(AQueue.Headpointer, AQueue.Tailpointer):\n        output_str += str(AQueue.QueueArray[i]) + " "\n    return output_str.strip()`,
+                        guideline: "• Translate pseudocode carefully into Python syntax.<br>• `ReturnAllData` iterates from `Headpointer` up to `Tailpointer - 1` without removing queue elements."
+                    },
+                    "3": {
+                        imageFile: "N24_q2_pg3.PNG",
+                        title: "Question 2 - Page 3: Input Validation Loop & Dequeue()",
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 2 (Page 3)\n# =========================================================\n\n# 2(e)(i) Main Program Input Loop\nfor i in range(10):\n    valid = False\n    num = -1\n    while not valid:\n        try:\n            num = int(input(f"Enter integer {i+1} (>=0): "))\n            if num >= 0:\n                valid = True\n        except ValueError:\n            pass\n            \n    res = Enqueue(TheQueue, num)\n    if res == -1:\n        print("Queue is full")\n    else:\n        print("Item added to queue")\n\nprint("Current Queue Contents:", ReturnAllData(TheQueue))\n\n# 2(f) Dequeue Function\ndef Dequeue(AQueue: Queue) -> int:\n    if AQueue.Headpointer == -1 or AQueue.Headpointer >= AQueue.Tailpointer:\n        return -1\n    else:\n        item = AQueue.QueueArray[AQueue.Headpointer]\n        AQueue.Headpointer += 1\n        return item`,
+                        guideline: "• Use a `while` loop for input validation (ensure input is >= 0).<br>• `Dequeue` increments `Headpointer` without modifying array elements."
+                    },
+                    "4": {
+                        imageFile: "N24_q2_pg4.PNG",
+                        title: "Question 2 - Page 4: Main Program Dequeue Testing",
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 2 (Page 4)\n# =========================================================\n\n# 2(g)(i) Main Program Dequeue Logic\nfor _ in range(2):\n    val = Dequeue(TheQueue)\n    if val == -1:\n        print("Queue empty")\n    else:\n        print("Dequeued value:", val)\n\nprint("Updated Queue Contents:", ReturnAllData(TheQueue))`,
+                        guideline: "• Call `Dequeue()` twice and check for empty queue response (`-1`).<br>• Display final contents using `ReturnAllData()`."
                     }
                 }
             },
             q3: {
-                titlePrefix: "Question 3",
                 pages: {
                     "1": {
-                        image: "N24_q3_pg1.PNG",
-                        title: "Question 3 - Page 1: Queue Implementation",
-                        code: `# Placeholder Python code for Question 3 - Page 1`,
-                        guideline: "Guideline notes for Question 3 Page 1."
+                        imageFile: "N24_q3_pg1.PNG",
+                        title: "Question 3 - Page 1: 2D Array & Exception File Handling",
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 3 (Page 1)\n# =========================================================\n\n# 3(a) Declare 2D Array local to main program (7 rows x 3 columns)\nHighScores = [["" for _ in range(3)] for _ in range(7)]\n\n# 3(b) ReadData Function with Exception Handling\ndef ReadData():\n    scores_array = [["" for _ in range(3)] for _ in range(7)]\n    try:\n        file = open("HighScoreTable.txt", "r")\n        for row in range(7):\n            scores_array[row][0] = file.readline().strip()  # Player ID\n            scores_array[row][1] = file.readline().strip()  # Game Level\n            scores_array[row][2] = file.readline().strip()  # Score\n        file.close()\n    except IOError:\n        print("Error: Could not open or read HighScoreTable.txt")\n    return scores_array`,
+                        guideline: "• Declare `HighScores` as a 7x3 2D list of strings.<br>• Use `try...except IOError` for mandatory file exception handling."
                     },
                     "2": {
-                        image: "N24_q3_pg2.PNG",
-                        title: "Question 3 - Page 2: File Handling Operations",
-                        code: `# Placeholder Python code for Question 3 - Page 2`,
-                        guideline: "Guideline notes for Question 3 Page 2."
+                        imageFile: "N24_q3_pg2.PNG",
+                        title: "Question 3 - Page 2: Output Procedure & Bubble Sort",
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 3 (Page 2)\n# =========================================================\n\n# 3(c) OutputHighScores Procedure\ndef OutputHighScores(scores_array):\n    for row in scores_array:\n        print(f"{row[0]} reached level {row[1]} with a score of {row[2]}")\n\n# 3(d) SortScores Function (2D Bubble Sort)\ndef SortScores(scores_array):\n    n = len(scores_array)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            level1 = int(scores_array[j][1])\n            level2 = int(scores_array[j+1][1])\n            score1 = int(scores_array[j][2])\n            score2 = int(scores_array[j+1][2])\n            \n            swap = False\n            if level1 < level2:\n                swap = True\n            elif level1 == level2 and score1 < score2:\n                swap = True\n                \n            if swap:\n                temp = scores_array[j]\n                scores_array[j] = scores_array[j+1]\n                scores_array[j+1] = temp\n    return scores_array`,
+                        guideline: "• Convert Level (`row[1]`) and Score (`row[2]`) to integers during sorting comparison.<br>• Sort primary key: Game Level (descending), secondary key: Score (descending)."
+                    },
+                    "3": {
+                        imageFile: "N24_q3_pg3.PNG",
+                        title: "Question 3 - Page 3: Main Program Execution",
+                        code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 3 (Page 3)\n# =========================================================\n\n# 3(e)(i) Main Program Execution\nHighScores = ReadData()\nprint("Before")\nOutputHighScores(HighScores)\n\nHighScores = SortScores(HighScores)\nprint("\\nAfter")\nOutputHighScores(HighScores)`,
+                        guideline: "• Follow the exact sequence: `ReadData()` -> Output 'Before' -> `SortScores()` -> Output 'After'."
                     }
                 }
             }
         };
 
-        // Function to load content based on selection
+        let currentImageFilename = "";
+
+        // Function to load selected question page
         function loadPage(questionKey, pageNum) {
-            // Reset other selects
+            // Unselect inactive dropdowns
             ['q1', 'q2', 'q3'].forEach(q => {
                 if (q !== questionKey) {
                     document.getElementById(`${q}-select`).selectedIndex = 0;
@@ -348,15 +282,26 @@ else:
             const data = portalData[questionKey]?.pages[pageNum];
             if (!data) return;
 
-            // Update UI components
-            document.getElementById('question-title').innerHTML = `<i class="fa-regular fa-file-lines text-blue-600"></i> <span>${data.title}</span>`;
+            currentImageFilename = data.imageFile;
+
+            // Update DOM Elements
+            document.getElementById('question-title').innerHTML = `<i class="fa-regular fa-file-lines text-slate-900"></i> <span>${data.title}</span>`;
             document.getElementById('page-badge').innerText = `Page ${pageNum}`;
-            document.getElementById('question-img').src = data.image;
             document.getElementById('code-block').innerText = data.code;
             document.getElementById('guidelines-content').innerHTML = data.guideline;
+
+            // Construct Raw GitHub Image URL
+            const fullImageUrl = RAW_GITHUB_BASE + data.imageFile;
+            document.getElementById('question-img').src = fullImageUrl;
         }
 
-        // Copy Code to Clipboard
+        // Image Load Error Handler
+        function handleImageError(imgElement) {
+            imgElement.onerror = null;
+            imgElement.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400"><rect width="100%" height="100%" fill="%23f8fafc"/><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="%23475569">Image Not Found on GitHub</text><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="13" fill="%230284c7">${currentImageFilename}</text><text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="12" fill="%2394a3b8">Check GitHub username/repo settings in script</text></svg>`;
+        }
+
+        // Copy Code Function
         function copyCode() {
             const codeText = document.getElementById('code-block').innerText;
             navigator.clipboard.writeText(codeText).then(() => {
@@ -364,7 +309,7 @@ else:
             });
         }
 
-        // Load Question 1 Page 1 on initial startup
+        // Load Question 1 Page 1 on startup
         window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('q1-select').value = "1";
             loadPage('q1', '1');
