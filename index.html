@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9618 November 2024 Paper 42 Portal</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #FA8FDF;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .code-container {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .card-container {
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            background-color: #ffffff;
+        }
+        /* Custom scrollbar for preview windows */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto space-y-6">
+
+        <!-- ================= HEADER SECTION ================= -->
+        <header class="text-center space-y-2">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-800">
+                9618 November 2024 Paper 42 Portal
+            </h1>
+            <p class="text-slate-600 font-medium text-lg">
+                A Level Computer Science (Complete Paper 4 Suite) Python Language
+            </p>
+        </header>
+
+        <!-- ================= DROPDOWN NAVIGATION ================= -->
+        <nav class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+            <!-- Question 1 Dropdown -->
+            <div>
+                <label for="q1-select" class="block text-sm font-semibold text-slate-700 mb-1">
+                    📌 Question 1 (Object-Oriented Programming)
+                </label>
+                <select id="q1-select" onchange="loadPage('q1', this.value)" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-800 text-sm font-medium">
+                    <option value="" disabled selected>-- Select Question 1 Page --</option>
+                    <option value="1">Page 1: EventItem Class & Constructor</option>
+                    <option value="2">Page 2: Get Methods & Group Array</option>
+                    <option value="3">Page 3: Character Class & Constructor</option>
+                    <option value="4">Page 4: CalculateScore Method</option>
+                    <option value="5">Page 5: Instantiating Character Objects</option>
+                    <option value="6">Page 6: Event Loop & Winner Determination</option>
+                </select>
+            </div>
+
+            <!-- Question 2 Dropdown -->
+            <div>
+                <label for="q2-select" class="block text-sm font-semibold text-slate-700 mb-1">
+                    📌 Question 2 (Recursion & Binary Trees)
+                </label>
+                <select id="q2-select" onchange="loadPage('q2', this.value)" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-800 text-sm font-medium">
+                    <option value="" disabled selected>-- Select Question 2 Page --</option>
+                    <option value="1">Page 1: Binary Tree Structure</option>
+                    <option value="2">Page 2: Recursive Search Algorithm</option>
+                </select>
+            </div>
+
+            <!-- Question 3 Dropdown -->
+            <div>
+                <label for="q3-select" class="block text-sm font-semibold text-slate-700 mb-1">
+                    📌 Question 3 (Abstract Data Types & Files)
+                </label>
+                <select id="q3-select" onchange="loadPage('q3', this.value)" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-800 text-sm font-medium">
+                    <option value="" disabled selected>-- Select Question 3 Page --</option>
+                    <option value="1">Page 1: Queue Implementation</option>
+                    <option value="2">Page 2: File Handling Operations</option>
+                </select>
+            </div>
+        </nav>
+
+        <!-- ================= MAIN PREVIEW GRID ================= -->
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- Left Panel: Question Image Preview -->
+            <section class="card-container p-4 flex flex-col h-[650px] shadow-sm">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
+                    <h2 id="question-title" class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-regular fa-file-lines text-blue-600"></i>
+                        <span>Question Preview</span>
+                    </h2>
+                    <span id="page-badge" class="px-2.5 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full">
+                        Page 1
+                    </span>
+                </div>
+                <div class="flex-1 overflow-auto bg-slate-100 rounded-lg p-2 border border-slate-200 flex items-center justify-center">
+                    <img id="question-img" src="N24_q1_pg1.PNG" alt="Question Image" class="max-w-full h-auto rounded shadow-sm object-contain" onError="this.onerror=null; this.src='https://via.placeholder.com/600x800?text=Image+N24_q1_pg1.PNG+Not+Found';">
+                </div>
+            </section>
+
+            <!-- Right Panel: Python Model Solution -->
+            <section class="card-container p-4 flex flex-col h-[650px] shadow-sm">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
+                    <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-laptop-code text-emerald-600"></i>
+                        <span>Python Model Solution</span>
+                    </h2>
+                    <button onclick="copyCode()" class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-200 hover:bg-slate-700 rounded transition-colors flex items-center gap-1">
+                        <i class="fa-regular fa-copy"></i> Copy Code
+                    </button>
+                </div>
+                <div class="flex-1 overflow-auto code-container rounded-lg p-4 border border-slate-700">
+                    <pre><code id="code-block" class="text-sm leading-relaxed whitespace-pre font-mono text-emerald-400"># Select a question page from the top navigation to view the Python code model.</code></pre>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ================= BOTTOM EXAMINATION GUIDELINES ================= -->
+        <footer class="card-container p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-lightbulb text-amber-500"></i>
+                <span>Examination Focus & Syllabus Guidelines</span>
+            </h3>
+            <div id="guidelines-content" class="text-slate-600 text-sm leading-relaxed space-y-2">
+                <p>Select a question page to display dedicated guidance notes and examination techniques tailored for Cambridge 9618 Paper 4.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Data Store for Portal Content
+        const portalData = {
+            q1: {
+                titlePrefix: "Question 1",
+                pages: {
+                    "1": {
+                        image: "N24_q1_pg1.PNG",
+                        title: "Question 1 - Page 1: EventItem Class & Constructor",
+                        code: `# =========================================================
+# 9618 November 2024 Paper 42 - Question 1 (Page 1)
+# =========================================================
+
+class EventItem:
+    # Private Attribute Declarations (Python Comments)
+    # __EventName   : str
+    # __Type        : str
+    # __Difficulty  : int
+
+    def __init__(self, p_name: str, p_type: str, p_difficulty: int):
+        self.__EventName = p_name
+        self.__Type = p_type
+        self.__Difficulty = p_difficulty`,
+                        guideline: "• Use double leading underscores (__attribute) for private attributes.<br>• Python requires attribute declarations as comments as per syllabus rules."
+                    },
+                    "2": {
+                        image: "N24_q1_pg2.PNG",
+                        title: "Question 1 - Page 2: Get Methods & Group Array",
+                        code: `# =========================================================
+# 9618 November 2024 Paper 42 - Question 1 (Page 2)
+# =========================================================
+
+    def GetName(self) -> str:
+        return self.__EventName
+
+    def GetDifficulty(self) -> int:
+        return self.__Difficulty
+
+    def GetEventType(self) -> str:
+        return self.__Type
+
+# Main Program Scope
+Group = []  # Declared local to main program
+
+Group.append(EventItem("Bridge", "jump", 3))
+Group.append(EventItem("Water wade", "swim", 4))
+Group.append(EventItem("100 mile run", "run", 5))
+Group.append(EventItem("Gridlock", "drive", 2))
+Group.append(EventItem("Wall on wall", "jump", 4))`,
+                        guideline: "• Maintain exact method identifiers matching the question table (`GetName`, `GetDifficulty`, `GetEventType`).<br>• Instantiate 5 objects into the `Group` array."
+                    },
+                    "3": {
+                        image: "N24_q1_pg3.PNG",
+                        title: "Question 1 - Page 3: Character Class & Constructor",
+                        code: `# =========================================================
+# 9618 November 2024 Paper 42 - Question 1 (Page 3)
+# =========================================================
+
+class Character:
+    # Private Attribute Declarations
+    # __CharacterName : str
+    # __Jump          : int
+    # __Swim          : int
+    # __Run           : int
+    # __Drive         : int
+
+    def __init__(self, p_name: str, p_jump: int, p_swim: int, p_run: int, p_drive: int):
+        self.__CharacterName = p_name
+        self.__Jump = p_jump
+        self.__Swim = p_swim
+        self.__Run = p_run
+        self.__Drive = p_drive
+
+    def GetName(self) -> str:
+        return self.__CharacterName`,
+                        guideline: "• Private attributes ensure encapsulation.<br>• Specify parameter data types correctly according to the syllabus."
+                    },
+                    "4": {
+                        image: "N24_q1_pg4.PNG",
+                        title: "Question 1 - Page 4: CalculateScore Method",
+                        code: `# =========================================================
+# 9618 November 2024 Paper 42 - Question 1 (Page 4)
+# =========================================================
+
+    def CalculateScore(self, p_type: str, p_difficulty: int) -> int:
+        skill = 0
+        p_type = p_type.lower()
+        
+        if p_type == "jump":
+            skill = self.__Jump
+        elif p_type == "swim":
+            skill = self.__Swim
+        elif p_type == "run":
+            skill = self.__Run
+        elif p_type == "drive":
+            skill = self.__Drive
+
+        if skill >= p_difficulty:
+            return 100
+        else:
+            diff = p_difficulty - skill
+            lookup = {1: 80, 2: 60, 3: 40, 4: 20}
+            return lookup.get(diff, 0)`,
+                        guideline: "• Check parameter comparison logic (`skill >= p_difficulty`).<br>• Return integer value representing percentage chance of completion."
+                    },
+                    "5": {
+                        image: "N24_q1_pg5.PNG",
+                        title: "Question 1 - Page 5: Instantiating Character Objects",
+                        code: `# =========================================================
+# 9618 November 2024 Paper 42 - Question 1 (Page 5)
+# =========================================================
+
+# Main Program - Character Instantiation
+Tarz = Character("Tarz", 5, 3, 5, 1)
+Geni = Character("Geni", 2, 2, 3, 4)`,
+                        guideline: "• Pass parameters in the exact position order defined in the constructor."
+                    },
+                    "6": {
+                        image: "N24_q1_pg6.PNG",
+                        title: "Question 1 - Page 6: Event Loop & Winner Determination",
+                        code: `# =========================================================
+# 9618 November 2024 Paper 42 - Question 1 (Page 6)
+# =========================================================
+
+tarz_points = 0
+geni_points = 0
+
+for item in Group:
+    tarz_chance = Tarz.CalculateScore(item.GetEventType(), item.GetDifficulty())
+    geni_chance = Geni.CalculateScore(item.GetEventType(), item.GetDifficulty())
+    
+    if tarz_chance > geni_chance:
+        tarz_points += 1
+        print(f"Tarz won event {item.GetName()}")
+    elif geni_chance > tarz_chance:
+        geni_points += 1
+        print(f"Geni won event {item.GetName()}")
+    else:
+        print(f"Event {item.GetName()} was a draw")
+
+print("\\n--- Final Outcome ---")
+if tarz_points > geni_points:
+    print(f"Tarz is overall winner with {tarz_points} points")
+elif geni_points > tarz_points:
+    print(f"Geni is overall winner with {geni_points} points")
+else:
+    print("The overall competition ended in a draw")`,
+                        guideline: "• Loop through each event object in `Group`.<br>• Correctly compare scores, track overall wins, and output formatted messages."
+                    }
+                }
+            },
+            q2: {
+                titlePrefix: "Question 2",
+                pages: {
+                    "1": {
+                        image: "N24_q2_pg1.PNG",
+                        title: "Question 2 - Page 1: Binary Tree Structure",
+                        code: `# Placeholder Python code for Question 2 - Page 1`,
+                        guideline: "Guideline notes for Question 2 Page 1."
+                    },
+                    "2": {
+                        image: "N24_q2_pg2.PNG",
+                        title: "Question 2 - Page 2: Recursive Search Algorithm",
+                        code: `# Placeholder Python code for Question 2 - Page 2`,
+                        guideline: "Guideline notes for Question 2 Page 2."
+                    }
+                }
+            },
+            q3: {
+                titlePrefix: "Question 3",
+                pages: {
+                    "1": {
+                        image: "N24_q3_pg1.PNG",
+                        title: "Question 3 - Page 1: Queue Implementation",
+                        code: `# Placeholder Python code for Question 3 - Page 1`,
+                        guideline: "Guideline notes for Question 3 Page 1."
+                    },
+                    "2": {
+                        image: "N24_q3_pg2.PNG",
+                        title: "Question 3 - Page 2: File Handling Operations",
+                        code: `# Placeholder Python code for Question 3 - Page 2`,
+                        guideline: "Guideline notes for Question 3 Page 2."
+                    }
+                }
+            }
+        };
+
+        // Function to load content based on selection
+        function loadPage(questionKey, pageNum) {
+            // Reset other selects
+            ['q1', 'q2', 'q3'].forEach(q => {
+                if (q !== questionKey) {
+                    document.getElementById(`${q}-select`).selectedIndex = 0;
+                }
+            });
+
+            const data = portalData[questionKey]?.pages[pageNum];
+            if (!data) return;
+
+            // Update UI components
+            document.getElementById('question-title').innerHTML = `<i class="fa-regular fa-file-lines text-blue-600"></i> <span>${data.title}</span>`;
+            document.getElementById('page-badge').innerText = `Page ${pageNum}`;
+            document.getElementById('question-img').src = data.image;
+            document.getElementById('code-block').innerText = data.code;
+            document.getElementById('guidelines-content').innerHTML = data.guideline;
+        }
+
+        // Copy Code to Clipboard
+        function copyCode() {
+            const codeText = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                alert('Python code copied to clipboard!');
+            });
+        }
+
+        // Load Question 1 Page 1 on initial startup
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('q1-select').value = "1";
+            loadPage('q1', '1');
+        });
+    </script>
+</body>
+</html>
