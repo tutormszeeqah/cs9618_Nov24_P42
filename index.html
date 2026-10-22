@@ -103,6 +103,7 @@
                     <option value="1">Page 1: 2D Array & File Reading</option>
                     <option value="2">Page 2: Output & Bubble Sort</option>
                     <option value="3">Page 3: Main Execution Flow</option>
+                    <option value="4">Page 4: HighScoreTable.txt Data File</option>
                 </select>
             </div>
         </nav>
@@ -131,7 +132,7 @@
                 <div class="flex items-center justify-between pb-3 px-3 pt-2 rounded-lg theme-right-header border border-sky-300 mb-3 shadow-sm">
                     <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
                         <i class="fa-solid fa-laptop-code text-slate-900"></i>
-                        <span>Python Model Solution</span>
+                        <span>Python Model Solution / Data File Content</span>
                     </h2>
                     <button onclick="copyCode()" class="px-3 py-1 text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 rounded-md transition-colors flex items-center gap-1 shadow-sm">
                         <i class="fa-regular fa-copy"></i> Copy Code
@@ -166,11 +167,11 @@
 
     <script>
         // =========================================================
-        // GITHUB CONFIGURATION (Configured with your repository details)
+        // GITHUB CONFIGURATION
         // =========================================================
-        const GITHUB_USER = "tutormszeeqah"; //
-        const GITHUB_REPO = "cs9618_Nov24_P42"; //[cite: 20]
-        const GITHUB_BRANCH = "main"; //[cite: 20]
+        const GITHUB_USER = "tutormszeeqah";[cite: 20]
+        const GITHUB_REPO = "cs9618_Nov24_P42";[cite: 20]
+        const GITHUB_BRANCH = "main";[cite: 20]
         
         const RAW_GITHUB_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/`;
 
@@ -263,6 +264,12 @@
                         title: "Question 3 - Page 3: Main Program Execution",
                         code: `# =========================================================\n# 9618 November 2024 Paper 42 - Question 3 (Page 3)\n# =========================================================\n\n# 3(e)(i) Main Program Execution\nHighScores = ReadData()\nprint("Before")\nOutputHighScores(HighScores)\n\nHighScores = SortScores(HighScores)\nprint("\\nAfter")\nOutputHighScores(HighScores)`,
                         guideline: "• Follow the exact sequence: `ReadData()` -> Output 'Before' -> `SortScores()` -> Output 'After'."
+                    },
+                    "4": {
+                        imageFile: "N24_q3_pg4.PNG",
+                        title: "Question 3 - Page 4: HighScoreTable.txt Data File Format",
+                        code: `# =========================================================\n# HighScoreTable.txt Contents (Required for Question 3)\n# =========================================================\n# Ensure this text file is created and saved in the same directory\n# as your Python script so ReadData() can open it successfully.\n\nGHEH\n3\n10\nKWQW\n4\n20\nMMND\n4\n18\nRFOO\n5\n20\nXXHD\n3\n19\nQWSD\n3\n15\nJGHF\n5\n22`,[cite: 15]
+                        guideline: "• This page displays the external text file `HighScoreTable.txt`[cite: 12, 15].<br>• Each item of data (Player ID, Game Level, Score) must be on a new line[cite: 12]."
                     }
                 }
             }
@@ -286,7 +293,7 @@
 
             // Update DOM Elements
             document.getElementById('question-title').innerHTML = `<i class="fa-regular fa-file-lines text-slate-900"></i> <span>${data.title}</span>`;
-            document.getElementById('page-badge`').innerText = `Page ${pageNum}`;
+            document.getElementById('page-badge').innerText = `Page ${pageNum}`;
             document.getElementById('code-block').innerText = data.code;
             document.getElementById('guidelines-content').innerHTML = data.guideline;
 
@@ -305,7 +312,7 @@
         function copyCode() {
             const codeText = document.getElementById('code-block').innerText;
             navigator.clipboard.writeText(codeText).then(() => {
-                alert('Python code copied to clipboard!');
+                alert('Python code/data copied to clipboard!');
             });
         }
 
